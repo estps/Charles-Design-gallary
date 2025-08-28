@@ -108,6 +108,14 @@
         .switch-input:checked + .switch-slider:before {
             transform: translateX(24px);
         }
+
+        /* Custom styles for disabled button */
+        .disabled-button {
+            cursor: not-allowed;
+        }
+        .disabled-button:hover {
+            transform: none;
+        }
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
@@ -127,10 +135,21 @@
             Click the button below to download the specified STL file.
         </p>
 
-        <!-- Download Button -->
-        <a href="https://drive.google.com/uc?export=download&id=1b3TBNUJdFuRycynngHxRSBwKpt6rx4fw" target="_blank" class="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 animate-pulse-subtle">
-            Download File
-        </a>
+        <!-- Buttons Container -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <!-- Download Button -->
+            <a href="https://drive.google.com/uc?export=download&id=1b3TBNUJdFuRycynngHxRSBwKpt6rx4fw" target="_blank" class="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 animate-pulse-subtle">
+                Download File
+            </a>
+
+            <!-- CAD Site Button (Greyed Out) -->
+            <a href="#" class="inline-block px-8 py-4 bg-gray-500 text-gray-200 font-semibold rounded-full shadow-lg disabled-button focus:outline-none focus:ring-4 focus:ring-gray-300 flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                CAD Site Not Available
+            </a>
+        </div>
 
         <p class="mt-8 text-secondary text-sm">
             After clicking download please wait for a few seconds.
